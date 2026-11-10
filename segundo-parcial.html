@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Segundo parcial de WEBVERSE: JavaScript, DOM, almacenamiento y diseño responsivo.">
+  <meta name="theme-color" content="#090d24">
+  <title>WEBVERSE | Segundo parcial · JavaScript</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/webverse.css">
+  <script src="js/segundo-parcial.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span><strong>WEBVERSE</strong><small>APRENDE · DESARROLLA · CREA</small></span></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a><a href="#javascript" class="active">JavaScript</a><a href="#dom">DOM</a><a href="#almacenamiento">Storage</a><a href="#diseno">Diseño avanzado</a>
+    </nav>
+    <a class="icon-button site-nav-back" href="index.html" aria-label="Volver al inicio">⌂</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="section-shell page-hero">
+      <div>
+        <span class="eyebrow"><span class="pulse-dot"></span> SEGUNDO PARCIAL · INTERACTIVIDAD</span>
+        <p class="hero-kicker">La siguiente etapa de mi recorrido</p>
+        <h1>JavaScript: <span>haz que la web reaccione.</span></h1>
+        <p class="hero-description">Ahora que una página tiene estructura y estilo, es momento de darle comportamiento: responder a eventos, procesar datos, modificar contenido y adaptarse a diferentes dispositivos.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#javascript">Explorar los temas →</a><a class="button button-ghost" href="index.html">Volver al inicio</a></div>
+      </div>
+      <div class="page-hero-art"><div class="js-emblem">JS</div></div>
+    </section>
+
+    <section class="section-shell content-section section-anchor" id="javascript">
+      <div class="section-heading"><span class="eyebrow">01 · FUNDAMENTOS DE JAVASCRIPT</span><h2>El lenguaje que agrega interactividad.</h2><p>Conceptos, variables, datos, operadores y estructuras para construir instrucciones.</p></div>
+      <div class="content-grid">
+        <article class="lesson-card">
+          <h3>¿Qué es JavaScript?</h3>
+          <p>JavaScript es un lenguaje de programación que permite agregar comportamiento e interactividad a las páginas web. Puede responder a clics, validar formularios, modificar el contenido y trabajar con datos.</p>
+          <pre><code>console.log("¡Hola, WEBVERSE!");</code></pre>
+        </article>
+        <article class="lesson-card">
+          <h3>Declaración de variables y constantes</h3>
+          <p><code class="inline-code">let</code> declara una variable cuyo valor puede cambiar; <code class="inline-code">const</code> declara una referencia que no puede reasignarse. <code class="inline-code">var</code> es una forma antigua que todavía puede encontrarse.</p>
+          <pre><code>let nombre = "Monse";
+let puntos = 10;
+const materia = "Aplicaciones Web";
+var mensaje = "¡A crear!";</code></pre>
+        </article>
+        <article class="lesson-card">
+          <h3>Tipos de datos</h3>
+          <ul><li><b>String:</b> texto, por ejemplo <code class="inline-code">"Hola"</code>.</li><li><b>Number:</b> números enteros y decimales.</li><li><b>Boolean:</b> verdadero o falso.</li><li><b>Undefined:</b> valor no asignado.</li><li><b>Null:</b> ausencia intencional de valor.</li><li><b>Object:</b> objetos, arreglos y otras estructuras.</li><li><b>BigInt y Symbol:</b> tipos adicionales.</li></ul>
+          <pre><code>let texto = "WEBVERSE";
+let cantidad = 18;
+let activo = true;
+let datos = null;</code></pre>
+        </article>
+        <article class="lesson-card">
+          <h3>Operadores</h3>
+          <p><b>Aritméticos:</b> +, -, *, /, %, **. <b>Asignación:</b> =, +=, -=. <b>Comparación:</b> ==, ===, !=, !==, &gt;, &lt;, &gt;=, &lt;=. <b>Lógicos:</b> &&, ||, !. También existe el operador ternario <code class="inline-code">condición ? valor1 : valor2</code>.</p>
+          <pre><code>let suma = 8 + 4;
+let esMayor = suma > 10;
+let puedeEntrar = esMayor && true;</code></pre>
+        </article>
+        <article class="lesson-card">
+          <h3>Cuadros de diálogo</h3>
+          <p>JavaScript incluye <code class="inline-code">alert()</code> para mostrar mensajes, <code class="inline-code">prompt()</code> para solicitar un dato y <code class="inline-code">confirm()</code> para pedir confirmación.</p>
+          <div class="demo-row"><button class="demo-button" id="alertDemo">Probar alert()</button><button class="demo-button" id="promptDemo">Probar prompt()</button><button class="demo-button" id="confirmDemo">Probar confirm()</button></div>
+          <div class="demo-output" id="dialogOutput" aria-live="polite">Prueba los cuadros de diálogo.</div>
+        </article>
+        <article class="lesson-card">
+          <h3>Obtener datos de un formulario</h3>
+          <p>Se pueden leer los valores mediante <code class="inline-code">value</code>, usando el evento <code class="inline-code">submit</code> y evitando que el formulario recargue la página con <code class="inline-code">preventDefault()</code>.</p>
+          <form id="nameForm">
+            <label class="demo-label" for="visitorName">Escribe tu nombre</label><input class="demo-input" id="visitorName" name="visitorName" type="text" placeholder="Tu nombre" required>
+            <button class="demo-button" type="submit">Obtener dato</button>
+          </form>
+          <div class="demo-output" id="formOutput" aria-live="polite"></div>
+        </article>
+        <article class="lesson-card">
+          <h3>parseInt() y parseFloat()</h3>
+          <p><code class="inline-code">parseInt()</code> convierte una cadena a un número entero; <code class="inline-code">parseFloat()</code> permite obtener un número decimal. Si el texto no comienza con un número válido, devuelven <code class="inline-code">NaN</code>.</p>
+          <label class="demo-label" for="numberInput">Escribe un número (ej. 24.75)</label><input class="demo-input" id="numberInput" value="24.75">
+          <div class="demo-row"><button class="demo-button" id="parseIntButton">Probar parseInt</button><button class="demo-button" id="parseFloatButton">Probar parseFloat</button></div>
+          <div class="demo-output" id="parseOutput" aria-live="polite">Resultado aquí.</div>
+          <pre><code>parseInt("24.75")   // 24
+parseFloat("24.75") // 24.75</code></pre>
+        </article>
+        <article class="lesson-card">
+          <h3>Estructuras de control</h3>
+          <p>Las estructuras de control determinan qué instrucciones se ejecutan y en qué orden. Entre ellas están las condiciones y las estructuras de selección.</p>
+          <pre><code>// if
+if (llueve) {
+  console.log("Llevar paraguas");
+}
+
+// if / else
+if (nota >= 6) {
+  console.log("Aprobado");
+} else {
+  console.log("Seguir practicando");
+}
+
+// switch
+switch (dia) {
+  case 1: console.log("Lunes"); break;
+  default: console.log("Otro día");
+}</code></pre>
+        </article>
+        <article class="lesson-card wide">
+          <h3>Prueba las estructuras: if, if-else y switch</h3>
+          <div class="comparison">
+            <div class="mini-panel">
+              <strong>if / if-else · Evaluar una calificación</strong>
+              <label class="demo-label" for="gradeInput">Calificación de 0 a 10</label><input class="demo-input" id="gradeInput" type="number" min="0" max="10" step="0.1" value="8">
+              <button class="demo-button" id="gradeButton">Evaluar</button><div class="demo-output" id="gradeOutput" aria-live="polite"></div>
+            </div>
+            <div class="mini-panel">
+              <strong>switch · Elegir un día</strong>
+              <select class="demo-select" id="daySelect"><option value="1">Lunes</option><option value="2">Martes</option><option value="3">Miércoles</option><option value="4">Jueves</option><option value="5">Viernes</option><option value="6">Sábado</option><option value="7">Domingo</option></select>
+              <button class="demo-button" id="dayButton">Consultar</button><div class="demo-output" id="dayOutput" aria-live="polite"></div>
+            </div>
+          </div>
+        </article>
+        <article class="lesson-card">
+          <h3>Funciones en JavaScript</h3>
+          <p>Una función es un bloque reutilizable que realiza una tarea. Puede recibir parámetros y devolver un resultado con <code class="inline-code">return</code>.</p>
+          <pre><code>function saludar(nombre) {
+  return "¡Hola, " + nombre + "!";
+}
+
+const mensaje = saludar("Monse");</code></pre>
+          <label class="demo-label" for="functionName">Prueba la función</label><input class="demo-input" id="functionName" value="Monse">
+          <button class="demo-button" id="functionButton">Llamar función</button><div class="demo-output" id="functionOutput" aria-live="polite"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell content-section section-anchor" id="dom">
+      <div class="section-heading"><span class="eyebrow">02 · DOCUMENT OBJECT MODEL</span><h2>DOM: JavaScript puede modificar la página.</h2><p>El DOM representa el documento HTML como un árbol de objetos. JavaScript puede localizar elementos y cambiar su contenido, atributos o estilos.</p></div>
+      <div class="content-grid">
+        <article class="lesson-card">
+          <h3>getElementsByTagName()</h3><p>Obtiene una colección de elementos que comparten el nombre de etiqueta indicado.</p><pre><code>document.getElementsByTagName("p");</code></pre>
+          <button class="demo-button" id="tagButton">Contar párrafos de esta tarjeta</button><div class="demo-output" id="tagOutput"></div>
+        </article>
+        <article class="lesson-card">
+          <h3>getElementsByClassName()</h3><p>Obtiene una colección de elementos que tienen una clase determinada.</p><pre><code>document.getElementsByClassName("lesson-card");</code></pre>
+          <button class="demo-button" id="classButton">Contar tarjetas de tema</button><div class="demo-output" id="classOutput"></div>
+        </article>
+        <article class="lesson-card">
+          <h3>querySelector()</h3><p>Devuelve el primer elemento que coincide con un selector CSS.</p><pre><code>document.querySelector("#domTitle");</code></pre>
+          <button class="demo-button" id="queryButton">Cambiar el título DOM</button>
+        </article>
+        <article class="lesson-card">
+          <h3>querySelectorAll()</h3><p>Devuelve una lista de todos los elementos que coinciden con el selector CSS.</p><pre><code>document.querySelectorAll(".demo-button");</code></pre>
+          <button class="demo-button" id="queryAllButton">Contar botones de ejemplo</button><div class="demo-output" id="queryAllOutput"></div>
+        </article>
+        <article class="lesson-card wide">
+          <h3>DOM en acción · Cambia este mensaje</h3>
+          <p id="domMessage">Este texto será modificado desde JavaScript utilizando el DOM.</p>
+          <div class="demo-row"><input class="demo-input" id="domTextInput" placeholder="Escribe un nuevo mensaje"><button class="demo-button" id="changeDomButton">Actualizar texto</button><button class="demo-button" id="resetDomButton">Restablecer</button></div>
+          <pre><code>document.querySelector("#domMessage").textContent = "Nuevo texto";</code></pre>
+        </article>
+        <article class="lesson-card wide">
+          <h3>Métodos en HTML y JavaScript</h3>
+          <p>Los métodos permiten realizar acciones sobre objetos. En HTML se utilizan atributos y eventos para conectar elementos con JavaScript; en JavaScript se invocan métodos como <code class="inline-code">.addEventListener()</code>, <code class="inline-code">.focus()</code>, <code class="inline-code">.classList.add()</code> y <code class="inline-code">.textContent</code> para interactuar con la página.</p>
+          <pre><code>&lt;button id="miBoton"&gt;Presióname&lt;/button&gt;
+
+const boton = document.querySelector("#miBoton");
+boton.addEventListener("click", () =&gt; {
+  boton.textContent = "¡Evento detectado!";
+});</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell content-section section-anchor" id="almacenamiento">
+      <div class="section-heading"><span class="eyebrow">03 · DATOS EN EL NAVEGADOR</span><h2>Local Storage: recordar también es programar.</h2><p>Local Storage permite guardar pares de clave y valor en el navegador. Los datos permanecen después de cerrar o recargar la página, hasta que se eliminen.</p></div>
+      <div class="content-grid">
+        <article class="lesson-card wide">
+          <h3>Prueba guardar tu propio recuerdo</h3>
+          <label class="demo-label" for="memoryInput">Mensaje para guardar</label><input class="demo-input" id="memoryInput" placeholder="Ej. Hoy aprendí a usar JavaScript">
+          <div class="demo-row"><button class="demo-button" id="saveMemory">Guardar en Local Storage</button><button class="demo-button" id="loadMemory">Recuperar dato</button><button class="demo-button" id="deleteMemory">Eliminar dato</button></div>
+          <div class="demo-output" id="memoryOutput" aria-live="polite">Tu mensaje aparecerá aquí.</div>
+          <pre><code>localStorage.setItem("miDato", "Hola");
+localStorage.getItem("miDato");
+localStorage.removeItem("miDato");</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell content-section section-anchor" id="diseno">
+      <div class="section-heading"><span class="eyebrow">04 · DISEÑO ADAPTABLE</span><h2>Una web, muchas pantallas.</h2><p>Flexbox, Grid y Media Queries ayudan a organizar los elementos y adaptar el diseño a computadoras, tabletas y celulares.</p></div>
+      <div class="content-grid">
+        <article class="lesson-card">
+          <h3>Media Query</h3><p>Permite aplicar estilos CSS cuando se cumple una condición, por ejemplo, cuando la pantalla tiene un ancho máximo determinado.</p><pre><code>/* Para pantallas de 600px o menos */
+@media (max-width: 600px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+        </article>
+        <article class="lesson-card">
+          <h3>Flexbox</h3><p>Modelo de diseño unidimensional: organiza elementos en una fila o columna y facilita su alineación y distribución.</p><pre><code>.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}</code></pre>
+          <div class="layout-demo"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+        </article>
+        <article class="lesson-card">
+          <h3>CSS Grid</h3><p>Modelo bidimensional que organiza elementos mediante filas y columnas.</p><pre><code>.contenedor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}</code></pre>
+          <div class="grid-demo"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+        </article>
+        <article class="lesson-card">
+          <h3>Tipos de pantallas</h3><p>Los diseños suelen considerar diferentes tamaños y contextos de visualización:</p><ul><li>Escritorio o computadora.</li><li>Tableta.</li><li>Teléfono móvil.</li></ul><div class="screen-demo"><span>▰ Escritorio</span><span>▯ Tableta</span><span>▯ Móvil</span></div>
+        </article>
+        <article class="lesson-card wide">
+          <h3>Diseño responsivo</h3><p>Un diseño responsivo adapta la distribución, el tamaño y el espacio de los elementos para que el contenido sea cómodo de utilizar en diferentes dispositivos. Se apoya en diseños flexibles, imágenes adaptables y Media Queries.</p>
+          <pre><code>img { max-width: 100%; height: auto; }
+
+.contenedor {
+  width: min(100% - 2rem, 1100px);
+  margin-inline: auto;
+}
+
+@media (max-width: 700px) {
+  .columnas { grid-template-columns: 1fr; }
+}</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell final-message">
+      <div class="final-stars">✦　✧　✦</div><h2>La creatividad no tiene punto final.</h2>
+      <p>Un nuevo lenguaje, una nueva herramienta y otra oportunidad para crear.</p>
+      <strong>«Creado con HTML, CSS, JavaScript y un poquito de cariño por la programación».</strong>
+      <div class="hero-actions" style="justify-content:center;margin-top:25px"><a class="button button-primary" href="index.html">Volver a WEBVERSE ↑</a><a class="button button-ghost" href="primer-parcial.html">Visitar primer parcial</a></div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span><strong>WEBVERSE</strong><small>HECHO CON CARIÑO ♡</small></span></a><span>Segundo parcial · JavaScript · 2026</span><a href="#javascript">Volver arriba ↑</a></footer>
+</body>
+</html>

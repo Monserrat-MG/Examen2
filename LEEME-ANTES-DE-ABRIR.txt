@@ -1,0 +1,9 @@
+WEBVERSE - archivos nuevos
+
+1. Copia las carpetas css, js, audio, img y los archivos index.html y segundo-parcial.html a la carpeta principal donde ya tienes primer-parcial.html.
+2. Conserva tu primer-parcial.html existente. Si tiene otro nombre, cambia los enlaces que dicen primer-parcial.html en index.html y segundo-parcial.html.
+3. Coloca tu canción como audio/cancion.mp3.
+4. Abre index.html con Live Server en Visual Studio Code.
+
+Nota sobre audio: los navegadores suelen bloquear el autoplay con sonido. El sitio intenta iniciar la canción en silencio y ofrece controles para activar sonido, pausar y ajustar volumen.
+Los ejemplos C++, Java y PSeInt del inicio muestran el resultado esperado; el botón ejecuta realmente la demostración JavaScript en el navegador.

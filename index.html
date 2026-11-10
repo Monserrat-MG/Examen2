@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WEBVERSE: un recorrido creativo por el desarrollo de aplicaciones web.">
+  <meta name="theme-color" content="#090d24">
+  <title>WEBVERSE | Aprende · Desarrolla · Crea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/webverse.css">
+  <script src="js/index.js" defer></script>
+</head>
+<body class="home-page">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="WEBVERSE, inicio">
+      <span class="brand-mark">&lt;/&gt;</span>
+      <span><strong>WEBVERSE</strong><small>APRENDE · DESARROLLA · CREA</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a class="active" href="#inicio">Inicio</a>
+      <a href="#parciales">Parciales</a>
+      <a href="#materia">La materia</a>
+      <a href="#dedicatoria">Dedicatoria</a>
+    </nav>
+    <button class="icon-button" id="themeToggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">☼</button>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <section class="music-strip" aria-label="Reproductor de música">
+    <div class="music-track">
+      <span class="music-note">♫</span>
+      <div><strong>Ambiente de programación</strong><small id="musicStatus">Agrega tu canción en la carpeta audio</small></div>
+    </div>
+    <audio id="backgroundMusic" src="Home - Come Back Down.mp3.mpeg" loop preload="metadata"></audio>
+    <button class="music-button" id="musicToggle" type="button">▶ Reproducir</button>
+    <label class="volume-control" for="musicVolume">Volumen</label>
+    <input id="musicVolume" type="range" min="0" max="1" step="0.01" value="0.35" aria-label="Volumen de la música">
+  </section>
+
+  <main>
+    <section class="hero section-shell" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="pulse-dot"></span> UN UNIVERSO HECHO DE CÓDIGO</span>
+        <p class="hero-kicker">Bienvenido a mi espacio creativo</p>
+        <h1>Las ideas cobran vida cuando aprendemos a <span>programarlas.</span></h1>
+        <p class="hero-description">Un recorrido por el mundo de las Aplicaciones Web: desde los primeros elementos de HTML y CSS hasta la interactividad de JavaScript.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#parciales">Explorar mi aprendizaje <span>→</span></a>
+          <a class="button button-ghost" href="#dedicatoria">Conoce la historia <span>♡</span></a>
+        </div>
+        <div class="hero-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Creatividad</span></div>
+      </div>
+      <div class="hero-art" aria-label="Ilustración de una computadora con código">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="code-window">
+          <div class="window-bar"><i></i><i></i><i></i><span>mi-idea.js</span></div>
+          <div class="fake-code">
+            <p><b>const</b> idea = <em>"crear"</em>;</p>
+            <p><b>function</b> <strong>hacerMagia</strong>() {</p>
+            <p class="indent">return <em>"algo increíble"</em>;</p>
+            <p>}</p>
+            <p class="code-result">✓ Compilando creatividad...</p>
+          </div>
+        </div>
+        <div class="floating-chip chip-one">{ }</div>
+        <div class="floating-chip chip-two">JS</div>
+        <div class="floating-star">✦</div>
+        <div class="hero-caption">IDEAS + CÓDIGO = POSIBILIDADES</div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="parciales">
+      <div class="section-heading">
+        <span class="eyebrow">MI RECORRIDO</span>
+        <h2>Dos parciales, un mundo de posibilidades.</h2>
+        <p>Cada etapa reúne conocimientos que fui convirtiendo en pequeñas experiencias digitales.</p>
+      </div>
+      <div class="semester-grid">
+        <article class="semester-card first-card">
+          <div class="card-topline"><span class="semester-icon">&lt;/&gt;</span><span class="status-pill">01 · FUNDAMENTOS</span></div>
+          <h3>Primer parcial</h3>
+          <p>Los cimientos de la web: estructura, contenido, enlaces, formularios y estilos que transforman una página.</p>
+          <div class="topic-pills"><span>HTML5</span><span>CSS</span><span>Tablas</span><span>Formularios</span></div>
+          <a class="button button-primary" href="primer-parcial.html">Entrar al primer parcial <span>→</span></a>
+        </article>
+        <article class="semester-card second-card">
+          <div class="card-topline"><span class="semester-icon">JS</span><span class="status-pill">02 · INTERACTIVIDAD</span></div>
+          <h3>Segundo parcial</h3>
+          <p>El siguiente paso: variables, decisiones, funciones, DOM, almacenamiento y diseños que se adaptan a cada pantalla.</p>
+          <div class="topic-pills"><span>JavaScript</span><span>DOM</span><span>Local Storage</span><span>Responsive</span></div>
+          <a class="button button-primary" href="segundo-parcial.html">Entrar al segundo parcial <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell about-section" id="materia">
+      <div class="about-visual">
+        <div class="visual-screen">
+          <span class="screen-label">CREATIVITY.exe</span>
+          <div class="screen-symbol">&lt;/&gt;</div>
+          <div class="screen-progress"><span></span></div>
+          <small>Transformando ideas en proyectos...</small>
+        </div>
+        <span class="visual-orbit orbit-dot">✦</span>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">¿POR QUÉ APLICACIONES WEB?</span>
+        <h2>Porque disfruto ver cómo una idea se convierte en algo real.</h2>
+        <p>Elegí esta asignatura porque me gusta crear páginas web y descubrir cómo mis ideas cobran vida a través del código. Me encanta experimentar con diseños, colores, estructuras y funciones, y comprobar que cada pequeño detalle puede convertirse en parte de una experiencia digital.</p>
+        <p>Para mí, programar no es solamente escribir instrucciones: es imaginar algo, intentar construirlo, equivocarme, aprender y sentir emoción cuando finalmente funciona.</p>
+        <div class="quote-line">“Cada línea de código es una oportunidad para crear algo que antes solo existía en mi imaginación”.</div>
+      </div>
+    </section>
+
+    <section class="section-shell dedication-section" id="dedicatoria">
+      <div class="section-heading centered-heading">
+        <span class="eyebrow">UN AGRADECIMIENTO ESPECIAL</span>
+        <h2>A quien hizo que aprender fuera todavía más emocionante. <span class="heart">♡</span></h2>
+      </div>
+      <article class="dedication-card">
+        <div class="dedication-symbol">✧</div>
+        <p>Desde el principio conecté con su manera de enseñar. Sus clases son interesantes y entretenidas, y aunque a veces el grupo consiga sacarle uno que otro enojo, usted siempre encuentra la forma de seguir ayudándonos.</p>
+        <p>Gracias por explicar con paciencia, por volver a enseñar cuando algo no queda claro y por esforzarse para que comprendamos cómo funciona cada pedacito de código. Gracias por mostrarnos que detrás de una función, una variable, una estructura o una declaración hay muchísimas posibilidades.</p>
+        <p>Sus clases han hecho que cada día me guste más la programación web y que tenga ganas de seguir creando incluso fuera de la vida estudiantil. Este proyecto es una pequeña muestra de todo lo que disfruté aprender y poner en práctica.</p>
+        <div class="dedication-signature">Con mucho cariño y agradecimiento <span>💜</span></div>
+      </article>
+    </section>
+
+    <section class="section-shell heart-code-section">
+      <div class="section-heading">
+        <span class="eyebrow">UN ALGORITMO MUY PERSONAL</span>
+        <h2>El corazón también sabe programar.</h2>
+        <p>La misma idea, expresada en distintos lenguajes. Selecciona una pestaña y ejecuta la demostración.</p>
+      </div>
+      <div class="code-lab">
+        <div class="code-tabs" role="tablist" aria-label="Lenguajes de programación">
+          <button class="code-tab active" data-language="javascript" role="tab" aria-selected="true">JavaScript</button>
+          <button class="code-tab" data-language="cpp" role="tab" aria-selected="false">C++</button>
+          <button class="code-tab" data-language="java" role="tab" aria-selected="false">Java</button>
+          <button class="code-tab" data-language="pseint" role="tab" aria-selected="false">PSeInt</button>
+          <button class="code-tab" data-language="html" role="tab" aria-selected="false">HTML + JS</button>
+        </div>
+        <pre class="code-display"><code id="heartCode">const programo = true;
+
+if (programo) {
+  console.log("Corazón feliz 💜");
+}</code></pre>
+        <div class="code-lab-bottom">
+          <button class="button button-primary" id="runHeartCode" type="button">▶ Ejecutar código</button>
+          <div class="terminal-output" aria-live="polite"><span>RESULTADO</span><strong id="heartOutput">Esperando ejecución...</strong></div>
+        </div>
+        <p class="code-note">Nota: la ejecución es real para JavaScript; los demás ejemplos muestran el resultado esperado como demostración.</p>
+      </div>
+    </section>
+
+    <section class="section-shell easter-section">
+      <div class="easter-card">
+        <div class="cricket-art" aria-hidden="true">🦗</div>
+        <div>
+          <span class="eyebrow">PSSST... HAY ALGO ESCONDIDO</span>
+          <h2>Un pequeño error de interpretación.</h2>
+          <p>Algunos recuerdos merecen quedarse guardados. ¿Te atreves a descubrir este?</p>
+        </div>
+        <button class="button button-ghost" id="cricketButton" type="button">Descubrir el secreto <span>✦</span></button>
+      </div>
+    </section>
+
+    <section class="section-shell final-message">
+      <div class="final-stars">✦　✧　✦</div>
+      <h2>Esto es solo el comienzo.</h2>
+      <p>Seguir aprendiendo, seguir creando y seguir convirtiendo ideas en proyectos.</p>
+      <strong>«Creado con HTML, CSS, JavaScript y un poquito de cariño por la programación».</strong>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#inicio"><span class="brand-mark">&lt;/&gt;</span><span><strong>WEBVERSE</strong><small>HECHO CON CARIÑO ♡</small></span></a>
+    <span>Proyecto de Aplicaciones Web · 2026</span>
+    <a href="#inicio">Volver arriba ↑</a>
+  </footer>
+
+  <dialog class="secret-dialog" id="cricketDialog">
+    <button class="dialog-close" id="closeCricket" type="button" aria-label="Cerrar">×</button>
+    <div class="secret-bug">🦗</div>
+    <span class="eyebrow">EASTER EGG DESBLOQUEADO</span>
+    <h2>¡Hola, grillos!</h2>
+    <p>Un día, al salir del laboratorio, la maestra nos llamó “crios, de crianza”. Pero yo, entre las prisas y mi magnífica capacidad para escuchar cualquier cosa menos lo que dicen, entendí “grillos”.</p>
+    <p>Desde ese día, “grillos” se convirtió en mi manera cariñosa de saludarla cuando la veo o llego al laboratorio. Quizá ella no conocía toda la historia detrás de ese apodo... hasta ahora. 💜</p>
+    <div class="secret-code">if (recuerdoEspecial) {<br>&nbsp;&nbsp;console.log("¡Hola, grillos! 🦗");<br>}</div>
+    <button class="button button-primary" id="secretOkay" type="button">Guardar este recuerdo ♡</button>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
